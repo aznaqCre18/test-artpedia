@@ -1,0 +1,335 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: Poppins;
+}
+
+body {
+  background-color: #F6F8FC;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+body .container {
+  background-color: #fff;
+  border-radius: 12px;
+  height: 800px;
+  max-width: 800px;
+  max-height: 800;
+  padding: 60px;
+  overflow: auto;
+}
+
+body .container .add-review-section {
+  padding-bottom: 60px;
+  border-bottom: 1px solid #B9B9B9;
+  margin-bottom: 40px;
+}
+
+body .container .add-review-section .title {
+  font-size: 44px;
+  font-weight: 600;
+  margin-bottom: 42px;
+}
+
+body .container .add-review-section .avrg-add-review {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body .container .add-review-section .avrg-add-review .avrg-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 16px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body .container .add-review-section .avrg-add-review .avrg-wrapper h1 {
+  font-size: 40px;
+  font-weight: 400;
+}
+
+body .container .add-review-section .avrg-add-review .avrg-wrapper .stars-avrg {
+  position: relative;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+body .container .add-review-section .avrg-add-review .avrg-wrapper .stars-avrg .star {
+  position: absolute;
+  -webkit-mask: url("./../assets/icon/star2.svg") no-repeat center left;
+          mask: url("./../assets/icon/star2.svg") no-repeat center left;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+body .container .add-review-section .avrg-add-review .avrg-wrapper .stars-avrg .star:not(.placeholder) {
+  background-color: #ffd900;
+  z-index: 2;
+}
+
+body .container .add-review-section .avrg-add-review .avrg-wrapper .stars-avrg .star.placeholder {
+  background-color: #E0E0E0;
+  z-index: 1;
+}
+
+body .container .add-review-section .avrg-add-review .btn-add-review {
+  width: 142px;
+  height: 48px;
+  background-color: transparent;
+  border: 2px solid #CCC;
+  border-radius: 4px;
+  font-size: 16px;
+  color: #797874;
+}
+
+body .container .add-review-section .avrg-add-review .btn-add-review:hover {
+  cursor: pointer;
+  opacity: .7;
+}
+
+body .container h3.title-review {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+
+body .container .list-review-section .list-rating-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 30px;
+  margin-bottom: 32px;
+}
+
+body .container .list-review-section .list-rating-wrapper .stars-rating {
+  position: relative;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  z-index: 10;
+}
+
+body .container .list-review-section .list-rating-wrapper .stars-rating .star {
+  position: absolute;
+  -webkit-mask: url("./../assets/icon/star2.svg") no-repeat center left;
+          mask: url("./../assets/icon/star2.svg") no-repeat center left;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+body .container .list-review-section .list-rating-wrapper .stars-rating .star:not(.placeholder) {
+  background-color: #ffd900;
+  z-index: 2;
+}
+
+body .container .list-review-section .list-rating-wrapper .stars-rating .star.placeholder {
+  background-color: #E0E0E0;
+  z-index: 1;
+}
+
+body .container .list-review-section .list-rating-wrapper .testimoni span {
+  font-size: 18px;
+}
+
+body .container .list-review-section .list-rating-wrapper .testimoni span.rate-value-number {
+  font-weight: 700;
+}
+
+body .container:-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #F5F5F5;
+}
+
+body .container::-webkit-scrollbar {
+  width: 6px;
+  background-color: #F5F5F5;
+  border-radius: 6px;
+}
+
+body .container::-webkit-scrollbar-thumb {
+  background-color: #333;
+}
+
+body .modal-overlay {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.192);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-transform: translateY(-1000px);
+          transform: translateY(-1000px);
+  opacity: 0;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: #333;
+  -webkit-animation: .2s linear overlayModal;
+          animation: .2s linear overlayModal;
+  z-index: 9999;
+}
+
+body .modal-overlay.open {
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+  opacity: 1;
+}
+
+body .modal-overlay.open .modal-container {
+  -webkit-transition: -webkit-transform .2s ease-in-out .2s;
+  transition: -webkit-transform .2s ease-in-out .2s;
+  transition: transform .2s ease-in-out .2s;
+  transition: transform .2s ease-in-out .2s, -webkit-transform .2s ease-in-out .2s;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+
+body .modal-overlay .modal-container {
+  width: 680px;
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 42px;
+  -webkit-transition: .3s ease-in;
+  transition: .3s ease-in;
+  -webkit-transform: translateY(-1000px);
+          transform: translateY(-1000px);
+  z-index: 99;
+}
+
+body .modal-overlay .modal-container .rating-container {
+  margin-bottom: 40px;
+}
+
+body .modal-overlay .modal-container .rating-container .rating-title {
+  font-size: 20px;
+  margin-top: 40px;
+  margin-bottom: 16px;
+}
+
+body .modal-overlay .modal-container .rating-container .star-wrapper {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  position: relative;
+  cursor: pointer;
+  width: auto;
+}
+
+body .modal-overlay .modal-container .rating-container .star-wrapper .wrapper-half-star #one-star img {
+  width: 30px !important;
+}
+
+body .modal-overlay .modal-container .review-container {
+  margin-bottom: 20px;
+}
+
+body .modal-overlay .modal-container .review-container .review-title {
+  font-size: 20px;
+  margin-bottom: 16px;
+}
+
+body .modal-overlay .modal-container .review-container #review-id {
+  width: 100%;
+  height: 100px;
+  border: 1px solid;
+  border: none;
+  font-size: 18px;
+  padding: 16px;
+  padding-left: 0;
+  outline: none;
+  color: black;
+  font-weight: 500;
+}
+
+body .modal-overlay .modal-container .review-container #review-id::-webkit-input-placeholder {
+  color: #929292;
+}
+
+body .modal-overlay .modal-container .review-container #review-id:-ms-input-placeholder {
+  color: #929292;
+}
+
+body .modal-overlay .modal-container .review-container #review-id::-ms-input-placeholder {
+  color: #929292;
+}
+
+body .modal-overlay .modal-container .review-container #review-id::placeholder {
+  color: #929292;
+}
+
+body .modal-overlay .modal-container .btn-rating {
+  height: 48px;
+  padding: 0 20px;
+  background-color: transparent;
+  border: 2px solid #CCC;
+  border-radius: 4px;
+  font-size: 16px;
+  color: #797874;
+  cursor: pointer;
+  -webkit-transition: .2s ease;
+  transition: .2s ease;
+}
+
+body .modal-overlay .modal-container .btn-rating:hover {
+  opacity: .7;
+}
+
+body .modal-overlay .modal-container .btn-rating.cancel {
+  background-color: #ED4444;
+  border: none;
+  color: #fff;
+}
+
+@-webkit-keyframes overlayModal {
+  0% {
+    .modal-overlay {
+      opacity: 0;
+      -webkit-transform: translateY(-1000px);
+              transform: translateY(-1000px);
+    }
+  }
+}
+
+@keyframes overlayModal {
+  0% {
+    .modal-overlay {
+      opacity: 0;
+      -webkit-transform: translateY(-1000px);
+              transform: translateY(-1000px);
+    }
+  }
+}
+/*# sourceMappingURL=index.css.map */

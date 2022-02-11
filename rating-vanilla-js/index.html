@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./style/index.css">
+</head>
+<body>
+  <div class="container">
+    <div class="add-review-section">
+      <h1 class="title">The Minimalist Entrepreneur</h1>
+      <div class="avrg-add-review">
+        <div class="avrg-wrapper">
+          <h1 class="avrg-count">0.0</h1>
+          <div class="stars-avrg"></div>
+        </div>
+        <button class="btn-add-review">Add review</button>
+      </div>
+    </div>
+    <h3 class="title-review">Reviews</h3>
+    <div class="list-review-section"></div>
+  </div>
+
+  <!-- MODAL SECTION -->
+  <div class="modal-overlay">
+    <div class="modal-container">
+      <h1>What's your rating?</h1>
+      <div class="rating-container">
+        <p class="rating-title">Insert Rating</p>
+        <div id="star-wrap" class="star-wrapper"></div>
+      </div>
+      <div class="review-container">
+        <p class="review-title">Insert Review</p>
+        <textarea class="user-review-input" name="review" id="review-id" cols="30" rows="10" placeholder="Star typing..." ></textarea>
+      </div>
+      <button class="btn-rating submit">Submit Review</button>
+      <button class="btn-rating cancel">Cancel</button>
+    </div>
+  </div>
+
+  <script src="./index.js"></script>
+  <script src="./ratingInput.js"></script>
+  <script src="./ratingDisplay.js"></script>
+  <script src="./submitRating.js"></script>
+  <script src="./modal.js"></script>
+  <script src="./ratingAverage.js"></script>
+</body>
+</html>
