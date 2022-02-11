@@ -1,4 +1,3 @@
-const createStarComponent = new StarRating();
 let active;
 
 const createPrecisionStarComponent = (index) => {

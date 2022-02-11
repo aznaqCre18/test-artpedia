@@ -24,3 +24,5 @@ function StarRating() {
     return Number(nearestNumber.toFixed(this.precision.toString().split('.')[1]?.length || 0));
   }
 }
+
+const createStarComponent = new StarRating();
