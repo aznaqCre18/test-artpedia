@@ -1,0 +1,21 @@
+.stars {
+  position: relative;
+  display: inline-flex;
+  z-index: 10;
+
+  .star {
+    position: absolute;
+    mask: url('./../../assets/icons/star2.svg');
+    display: inline-flex;
+
+    &:not(.placeholder) {
+      background-color: #ffd900;
+      z-index: 2;
+    }
+
+    &.placeholder {
+      background-color: #E0E0E0;
+      z-index: 1;
+    }
+  }
+}

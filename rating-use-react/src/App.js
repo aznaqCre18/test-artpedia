@@ -1,9 +1,13 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import { BrowserRouter, Route } from "react-router-dom";
+import RatingPage from './pages/RatingPage';
 
 export default class App extends Component {
   render() {
     return (
-      <div>App</div>
+      <BrowserRouter>
+        <Route exact path="/" component={RatingPage} />
+      </BrowserRouter>
     )
   }
 }
