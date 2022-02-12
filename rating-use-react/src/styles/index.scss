@@ -7,6 +7,15 @@
   font-family: Poppins;
 }
 
+body {
+  background-color: #F6F8FC;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+}
+
 //COMPONENTS
 @import './component/stars-display';
 

@@ -57,7 +57,7 @@ export default class RatingDisplay extends Component {
     }
 
     return (
-      <div className="stars">
+      <div className="stars" style={{width: width * 5, height: 30}}>
         {starPlaceholder}
         {star}
       </div>
