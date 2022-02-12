@@ -7,17 +7,12 @@
   font-family: Poppins;
 }
 
-body {
-  background-color: #F6F8FC;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  width: 100vw;
-}
+//ANIMATION
+@import './animation/animation';
 
 //COMPONENTS
 @import './component/stars-display';
+@import './component/modal-create-rating';
 
 //PAGES
 @import './pages/rating-page';

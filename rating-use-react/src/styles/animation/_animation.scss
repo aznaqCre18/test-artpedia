@@ -1,0 +1,8 @@
+@keyframes overlayModal {
+  0% {
+    .modal-overlay {
+      opacity: 0;
+      transform: translateY(-1000px);
+    }
+  }
+}
