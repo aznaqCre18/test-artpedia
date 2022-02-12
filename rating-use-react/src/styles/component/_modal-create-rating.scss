@@ -43,9 +43,22 @@
         cursor: pointer;
         width: auto;
         .wrapper-half-star {
+          display: inline-flex;
+          position: relative;
+          cursor: pointer;
+          text-align: left;
+          width: 30px;
+          height: 30px;
+          margin-right: 4px;
+          align-items: center;
+
           #one-star {
+            overflow: hidden;
+            position: absolute;
+
             img {
-              width: 30px !important;
+              width: 30px;
+              height: 30px;
             }
           }
         }

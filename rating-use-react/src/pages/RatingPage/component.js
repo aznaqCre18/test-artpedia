@@ -5,7 +5,7 @@ import RatingDisplay from '../../components/RatingDisplay';
 export default class RatingPage extends Component {
 
   state = {
-    isModalActive: true,
+    isModalActive: false,
   }
 
   _handleOpenModal = () => {
