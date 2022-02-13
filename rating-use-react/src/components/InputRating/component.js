@@ -1,16 +1,10 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { IconStarPlaceholder, IconStarOn } from './../../configs/icons';
 
-const InputRating = ({ precision = 1, totalStar = 5 }) => {
-  const [star, setStar] = useState(-1);
+const InputRating = ({ starValue, precision = 1, totalStar = 5, setStarValue }) => {
   const [starPlaceholder, setStarPlaceholder] = useState(-1);
   const [isHovered, setIsHovered] = useState(false);
   const starWrapperRef = useRef(null);
-
-  useEffect(() => {
-    console.log(star)
-  }, [star])
-  
 
   const _calculateRating = (e) => {
     const { width, left } = starWrapperRef.current.getBoundingClientRect();
@@ -24,7 +18,7 @@ const InputRating = ({ precision = 1, totalStar = 5 }) => {
 
   const _handleClick = (e) => {
     setIsHovered(false);
-    setStar(_calculateRating(e));
+    setStarValue(_calculateRating(e));
   }
 
   const _handleMouseMove = (e) => {
@@ -53,7 +47,7 @@ const InputRating = ({ precision = 1, totalStar = 5 }) => {
       {
         [...new Array(totalStar)].map((value, idx) => {
 
-          const activeState = isHovered ? starPlaceholder : star;
+          const activeState = isHovered ? starPlaceholder : starValue;
           const showEmptyIcon = activeState === -1 || activeState < idx + 1;
 
           const isActiveRating = activeState !== 1;

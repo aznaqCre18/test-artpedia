@@ -6,6 +6,14 @@ export default class RatingPage extends Component {
 
   state = {
     isModalActive: false,
+    inputValue: {},
+  }
+
+  _handleSubmitRatingInput = (data) => {
+    const { actions } = this.props;
+
+    actions.saveInputRating(data);
+    this._handleOpenModal();
   }
 
   _handleOpenModal = () => {
@@ -16,6 +24,7 @@ export default class RatingPage extends Component {
 
   render() {
     const { isModalActive } = this.state;
+    const { setRatingInput } = this.props;
 
     return (
       <div className="container-rating-feature">
@@ -53,7 +62,7 @@ export default class RatingPage extends Component {
             </div>
           </div>
         </div>
-        <ModalCreateRating show={isModalActive} onHide={this._handleOpenModal} />
+        <ModalCreateRating show={isModalActive} onHide={this._handleOpenModal} onSubmit={this._handleSubmitRatingInput} />
       </div>
     )
   }
