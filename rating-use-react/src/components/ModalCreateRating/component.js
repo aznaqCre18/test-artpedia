@@ -4,19 +4,26 @@ import InputRating from '../InputRating/component';
 const ModalCreateRating = ({show, onHide, onSubmit}) => {
   const [textReview, setTextReview] = useState('');
   const [starValue, setStarValue] = useState(-1);
+  const [errorSubmit, setErrorSubmit] = useState(false);
 
   const _handleChangeTextReview = (e) => {
     setTextReview(e.target.value);
   }
 
   const _handleSetStarValue = (value) => {
+    if(errorSubmit) setErrorSubmit(false);
     setStarValue(value);
   }
 
   const _handleSubmitModal = async () => {
-    await onSubmit({starValue, textReview});
-    setTextReview('');
-    setStarValue(-1);
+    if(starValue === -1 || starValue < 1) {
+      setErrorSubmit(true);
+    } else {
+      setErrorSubmit(false);
+      await onSubmit({starValue, textReview: textReview === '' ? 'Tidak ada review' : textReview});
+      setTextReview('');
+      setStarValue(-1);
+    }
   }
 
   return (
@@ -26,6 +33,7 @@ const ModalCreateRating = ({show, onHide, onSubmit}) => {
         <div className="rating-container">
           <p className="rating-title">Insert Rating</p>
           <InputRating starValue={starValue} setStarValue={_handleSetStarValue} />
+          {errorSubmit && <p className='error-message-validation'>you must give at least one star</p>}
         </div>
         <div className="review-container">
           <p className="review-title">Insert Review</p>
