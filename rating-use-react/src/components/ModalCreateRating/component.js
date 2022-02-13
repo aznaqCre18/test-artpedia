@@ -32,7 +32,7 @@ const ModalCreateRating = ({show, onHide, onSubmit}) => {
         <h1>What's your rating?</h1>
         <div className="rating-container">
           <p className="rating-title">Insert Rating</p>
-          <InputRating starValue={starValue} setStarValue={_handleSetStarValue} />
+          <InputRating precision={0.5} starValue={starValue} setStarValue={_handleSetStarValue} />
           {errorSubmit && <p className='error-message-validation'>you must give at least one star</p>}
         </div>
         <div className="review-container">

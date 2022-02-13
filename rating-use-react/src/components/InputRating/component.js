@@ -57,7 +57,7 @@ const InputRating = ({ starValue, precision = 1, totalStar = 5, setStarValue }) 
           return (
             <div key={`star-${idx}`} className="wrapper-half-star">
               <div
-                id="one-star"
+                id="half-star"
                 style={{
                   width: showRatingWithPrecision ? `${(activeState % 1) * 100}%` : '0%',
                 }}

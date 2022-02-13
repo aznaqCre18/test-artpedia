@@ -46,7 +46,7 @@ const RatingDisplay = ({ value, width, height, spacing }) => {
         key="key"
         style={{
           left: leftPos,
-          width: (width * decimal),
+          width: (width * decimal) - spacing,
           height: height,
           marginRight: spacing,
         }}
