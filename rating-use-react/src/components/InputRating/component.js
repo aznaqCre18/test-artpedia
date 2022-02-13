@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { IconStarPlaceholder, IconStarOn } from './../../configs/icons';
 
 const InputRating = ({ precision = 1, totalStar = 5 }) => {
@@ -6,6 +6,11 @@ const InputRating = ({ precision = 1, totalStar = 5 }) => {
   const [starPlaceholder, setStarPlaceholder] = useState(-1);
   const [isHovered, setIsHovered] = useState(false);
   const starWrapperRef = useRef(null);
+
+  useEffect(() => {
+    console.log(star)
+  }, [star])
+  
 
   const _calculateRating = (e) => {
     const { width, left } = starWrapperRef.current.getBoundingClientRect();

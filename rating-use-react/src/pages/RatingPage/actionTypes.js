@@ -1,0 +1,1 @@
+export const SET_RATING_INPUT = 'SET_RATING_INPUT';
