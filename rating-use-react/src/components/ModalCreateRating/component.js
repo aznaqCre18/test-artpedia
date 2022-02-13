@@ -29,7 +29,7 @@ const ModalCreateRating = ({show, onHide, onSubmit}) => {
         </div>
         <div className="review-container">
           <p className="review-title">Insert Review</p>
-          <textarea onChange={_handleChangeTextReview} className="user-review-input" name="review" id="review-id" cols="30" rows="10" placeholder="Star typing..." ></textarea>
+          <textarea value={textReview} onChange={_handleChangeTextReview} className="user-review-input" name="review" id="review-id" cols="30" rows="10" placeholder="Star typing..." ></textarea>
         </div>
         <button onClick={_handleSubmitModal} className="btn-rating submit">Submit Review</button>
         <button onClick={onHide} className="btn-rating cancel">Cancel</button>

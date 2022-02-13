@@ -22,8 +22,22 @@ export default class RatingPage extends Component {
     });
   }
 
+  _calculateAverage = () => {
+    const { setRatingInput } = this.props;
+    let sumOfAllRating = 0;
+    let average = 0;
+    
+    setRatingInput?.allRatingInput?.map(item => {
+      sumOfAllRating += Number(item.starValue);
+      average = sumOfAllRating / setRatingInput?.allRatingInput?.length
+    });
+
+    let avrgValue = average.toFixed(1);
+    return avrgValue;
+  }
+
   render() {
-    const { isModalActive } = this.state;
+    const { isModalActive, avrgValue } = this.state;
     const { setRatingInput } = this.props;
 
     return (
@@ -33,10 +47,10 @@ export default class RatingPage extends Component {
             <h1 className="title">The Minimalist Entrepreneur</h1>
             <div className="avrg-add-review">
               <div className="avrg-wrapper">
-                <h1 className="avrg-count">0.0</h1>
+                <h1 className="avrg-count">{!this._calculateAverage() ? '0.0' : this._calculateAverage()}</h1>
                 <div className="stars-avrg">
                   <RatingDisplay 
-                    value={3.5}
+                    value={this._calculateAverage()}
                     width={30}
                     height={30}
                     spacing={4}
@@ -48,18 +62,28 @@ export default class RatingPage extends Component {
           </div>
           <h3 className="title-review">Reviews</h3>
           <div className="list-review-sections">
-            <div className="list-rating-wrapper">
-              <RatingDisplay 
-                value={3.5}
-                width={30}
-                height={30}
-                spacing={4}
-              />
-              <div className="testimoni">
-                <span className="rate-value-number">5</span>
-                <span className="user-testimoni">, bintang 5</span>
-              </div>
-            </div>
+            {
+              setRatingInput?.allRatingInput?.length < 1 ? (
+                <div>Tidak ada rating teradftar</div>
+              ) : (
+                setRatingInput?.allRatingInput?.map((item, idx) => {
+                  return (
+                    <div key={idx} className="list-rating-wrapper">
+                      <RatingDisplay 
+                        value={Number(item.starValue)}
+                        width={30}
+                        height={30}
+                        spacing={4}
+                      />
+                      <div className="testimoni">
+                        <span className="rate-value-number">{item.starValue}</span>
+                        <span className="user-testimoni">{`, ${item.textReview}`}</span>
+                      </div>
+                    </div>
+                  )
+                })
+              )
+            }
           </div>
         </div>
         <ModalCreateRating show={isModalActive} onHide={this._handleOpenModal} onSubmit={this._handleSubmitRatingInput} />

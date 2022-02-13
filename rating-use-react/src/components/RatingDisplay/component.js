@@ -1,7 +1,7 @@
 import React from 'react'
 
 const RatingDisplay = ({ value, width, height, spacing }) => {
-  
+
   let star = [];
   let starPlaceholder = [];
   let leftPos = 0;
@@ -45,7 +45,7 @@ const RatingDisplay = ({ value, width, height, spacing }) => {
         className="star"
         style={{
           left: leftPos,
-          width: (width * decimal) - spacing,
+          width: (width * decimal),
           height: height,
           marginRight: spacing,
         }}
