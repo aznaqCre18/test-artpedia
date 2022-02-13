@@ -43,6 +43,7 @@ const RatingDisplay = ({ value, width, height, spacing }) => {
     star.push(
       <div
         className="star"
+        key="key"
         style={{
           left: leftPos,
           width: (width * decimal),

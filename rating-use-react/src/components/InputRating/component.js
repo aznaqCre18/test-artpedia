@@ -27,7 +27,6 @@ const InputRating = ({ starValue, precision = 1, totalStar = 5, setStarValue }) 
   }
 
   const _handleMouseOut = (e) => {
-    console.log('jalan');
     setStarPlaceholder(-1);
     setIsHovered(false);
   }
