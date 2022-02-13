@@ -5,7 +5,7 @@
 
   .star {
     position: absolute;
-    mask: url('./../../assets/icons/star2.svg');
+    mask: url('./../../assets/icons/star2.svg') no-repeat;
     display: inline-flex;
 
     &:not(.placeholder) {
